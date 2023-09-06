@@ -1,0 +1,15 @@
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\bin\Debug\net7.0\Persistencia.deps.json
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\bin\Debug\net7.0\Persistencia.dll
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\bin\Debug\net7.0\Persistencia.pdb
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\bin\Debug\net7.0\Dominio.dll
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\bin\Debug\net7.0\Dominio.pdb
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.AssemblyInfo.cs
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.csproj.CopyComplete
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.dll
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\refint\Persistencia.dll
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\Persistencia.pdb
+C:\Users\APOLT01\Documents\anderson\JsonPractica\Persistencia\obj\Debug\net7.0\ref\Persistencia.dll
