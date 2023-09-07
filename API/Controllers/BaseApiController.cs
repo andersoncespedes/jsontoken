@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Controllers;
+namespace API.ContRolslers;
 [ApiController]
-[Route("api/{controller}")]
+[Route("api/{contRolsler}")]
 
-public class BaseApiController: ControllerBase
+public class BaseApiContRolsler: ControllerBase
 {
         
 }

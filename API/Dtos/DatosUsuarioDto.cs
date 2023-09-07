@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace API.Dtos;
 
-    public class DatosUsuarioDto
+    public class DatosUserDto
     {
         public string Mensaje {get; set;}
-        public bool EstaAutentificado {get; set;}
+        public bool EstaAutenticado {get; set;}
         public string Username {get; set;}
         public string Email {get; set;}
         public List<string> Roles {get; set;}
