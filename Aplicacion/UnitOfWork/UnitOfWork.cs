@@ -13,8 +13,6 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private readonly APIContext _context;
     private UsuarioRepository _usuarios;
     private RolRepository _roles;
-
-
     public UnitOfWork(APIContext context){
         _context = context;
     }

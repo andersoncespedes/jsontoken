@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8WmRCVdGAsRE1YNok9ZXisZYj+pbMHOz9C/b3lyXk29rh3FYXzFZM+gkMgE/n3OOZqYj5tFrBBOkhFhJB8i3vw==",
+  "dgSpecHash": "hFKb3aJInacUzo0LigkSI9H/FpjDxXCG7iJc/cgKxjOlUdIwMkzti3+c01AzOW+BpwRXS8LGwpnUqRcmrM3Hcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
+  "projectFilePath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\APOLT01\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\APOLT01\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

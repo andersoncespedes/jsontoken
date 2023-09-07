@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj": {}
+    "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj": {
+    "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj",
+        "projectUniqueName": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj",
         "projectName": "Aplicacion",
-        "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj",
+        "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj",
         "packagesPath": "C:\\Users\\APOLT01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\obj\\",
+        "outputPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\APOLT01\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,11 +26,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
+              "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
+                "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
               },
-              "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj"
+              "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
+    "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
+        "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\APOLT01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\obj\\",
+        "outputPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\APOLT01\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -131,14 +131,14 @@
         }
       }
     },
-    "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj": {
+    "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
+        "projectUniqueName": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
+        "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
         "packagesPath": "C:\\Users\\APOLT01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\obj\\",
+        "outputPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\APOLT01\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -153,8 +153,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
+              "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
+                "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
               }
             }
           }

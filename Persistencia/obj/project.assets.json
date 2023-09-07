@@ -5221,11 +5221,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
+      "projectUniqueName": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
       "projectName": "Persistencia",
-      "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
+      "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj",
       "packagesPath": "C:\\Users\\APOLT01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\obj\\",
+      "outputPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\APOLT01\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -5240,8 +5240,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
+            "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
+              "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
             }
           }
         }

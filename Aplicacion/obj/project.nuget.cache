@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qxd9QbVRi46ieApr+x+d9LoqqUs+jFVcZ/7418eouEjn5ZR57Sd3d+0IeCtHk6tWoI8qHj+BY7wC/0iZ1RTugA==",
+  "dgSpecHash": "CZnHHf6Jnk97+lTU7UrF2d+YzkJYpr66W9/GwgUboomGly0r/Hk5gQmVrTk55tWND5pXEGwoEBmoUZNy7Q/Q1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj",
+  "projectFilePath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Aplicacion\\Aplicacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\APOLT01\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\APOLT01\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

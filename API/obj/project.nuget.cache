@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cGdp0gAVFV6ldugtWZDL0v2ulS1DMT7jE5xP3s8QCuOIxH6k0RzeDoQGbK+46+DTWP04rAXBuhMjDIHHw8Nowg==",
+  "dgSpecHash": "kaRJPcSY91UL3VpLZ+VxVSwpAci8eB8EjPitdQFLfxFKWye8lKBnUSddKD1jrqeFQSus0pI9dflEBGPyXlcSeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\API\\API.csproj",
+  "projectFilePath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\APOLT01\\.nuget\\packages\\aspnetcoreratelimit\\5.0.0\\aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "C:\\Users\\APOLT01\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
