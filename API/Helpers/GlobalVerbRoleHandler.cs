@@ -15,8 +15,9 @@ public class GlobalVerbRolseHandler : AuthorizationHandler<GlobalVerbRolseRequir
     {
         var Rolses = context.User.FindAll(e => string.Equals(e.Type, ClaimTypes.Role)).Select(e => e.Value);
         var verb = _httpContextAccessor.HttpContext?.Request.Method;
-        if(string.IsNullOrEmpty(verb)){throw new Exception($"request can't be null");}
+        if(String.IsNullOrEmpty(verb)){throw new Exception($"request can't be null");}
         foreach(var Rolse in Rolses){
+
             if(requirement.IsAllowed(Rolse,verb)){
                 context.Succeed(requirement);
                 return Task.CompletedTask;

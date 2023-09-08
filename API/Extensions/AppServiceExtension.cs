@@ -3,10 +3,10 @@ using Aplicacion.UnitOfWork;
 using Dominio.Entities;
 using Dominio.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Identity;
 using API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using iText.StyledXmlParser.Jsoup.Helper;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 namespace API.Extensions;
@@ -38,6 +38,24 @@ public static class AppServiceExtension
                 ValidIssuer = configuration["JWT:Issuer"],
                 ValidAudience = configuration["JWT:Audience"],
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]))
+            };
+        });
+    }
+     public static void ConfigureRateLimit(this IServiceCollection services){
+        services.AddMemoryCache();
+        services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+        services.AddInMemoryRateLimiting();
+        services.Configure<IpRateLimitOptions>(options => {
+            options.EnableEndpointRateLimiting = true;
+            options.StackBlockedRequests = false;
+            options.HttpStatusCode = 429;
+            options.RealIpHeader = "X-Real-IP";
+            options.GeneralRules = new List<RateLimitRule>(){
+                new RateLimitRule {
+                   Endpoint = "*",
+                   Period = "10s",
+                   Limit = 2 
+                }
             };
         });
     }

@@ -45,12 +45,11 @@ public class UserService : IUserService
 
         if (UserExiste == null)
         {
-           // var RolsPredeterminado = _unitOfWork.Rols
-                                   // .Find(u => u.Nombre == Authorization.Rol_predeterminado.ToString())
-                                    //.First();
+            var RolsPredeterminado = _unitOfWork.Roles
+                                    .Find(u => u.Nombre == "cliente")
+                                    .First();
             try
             {
-                //User.Rolss.Add(RolsPredeterminado);
                 _unitOfWork.User.Add(User);
                 await _unitOfWork.SaveAsync();
 
@@ -69,10 +68,10 @@ public class UserService : IUserService
     }
 
 
-    /*public async Task<DatosUserDto> GetTokenAsync(LoginDto model)
+    public async Task<DatosUserDto> GetTokenAsync(LoginDto model)
     {
         DatosUserDto datosUserDto = new DatosUserDto();
-        var User = await _unitOfWork.Users
+        var User = await _unitOfWork.User
                     .GetByUsernameAsync(model.Username);
 
         if (User == null)
@@ -90,8 +89,8 @@ public class UserService : IUserService
             JwtSecurityToken jwtSecurityToken = CreateJwtToken(User);
             datosUserDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
             datosUserDto.Email = User.Email;
-            datosUserDto.UserName = User.Username;
-            datosUserDto.Rolses = User.Rolses
+            datosUserDto.Username = User.Username;
+            datosUserDto.Roles = User.Roles
                                             .Select(u => u.Nombre)
                                             .ToList();
             return datosUserDto;
@@ -99,7 +98,7 @@ public class UserService : IUserService
         datosUserDto.EstaAutenticado = false;
         datosUserDto.Mensaje = $"Credenciales incorrectas para el User {User.Username}.";
         return datosUserDto;
-    }*/
+    }
 
     public async Task<string> AddRolseAsync(AddRoleDto model)
     {
@@ -112,17 +111,17 @@ public class UserService : IUserService
         var resultado = _passwordHasher.VerifyHashedPassword(User, User.Password, model.Password);
         if (resultado == PasswordVerificationResult.Success)
         {
-            var RolsExiste = _unitOfWork.Rols
+            var RolsExiste = _unitOfWork.Roles
                                         .Find(u => u.Nombre.ToLower() == model.Rol.ToLower())
                                         .FirstOrDefault();
             if (RolsExiste != null)
             {
-                var UserTieneRols = User.Rolss
+                var UserTieneRols = User.Roles
                                             .Any(u => u.Id == RolsExiste.Id);
 
                 if (UserTieneRols == false)
                 {
-                    User.Rolss.Add(RolsExiste);
+                    User.Roles.Add(RolsExiste);
                     _unitOfWork.User.Update(User);
                     await _unitOfWork.SaveAsync();
                 }
@@ -132,44 +131,13 @@ public class UserService : IUserService
         }
         return $"Credenciales incorrectas para el User {User.Username}.";
     }
-    public async Task<DatosUserDto> GetTokenAsync(LoginDto model)
-    {
-        DatosUserDto datosUserDto = new DatosUserDto();
-        var User = await _unitOfWork.User
-                    .GetByUsernameAsync(model.Username);
-        if (User == null)
-        {
-            datosUserDto.EstaAutenticado = false;
-            datosUserDto.Mensaje = $"No existe ningún User con el username {model.Username}.";
-            return datosUserDto;
-        }
-
-        var result = _passwordHasher.VerifyHashedPassword(User, User.Password, model.Password);
-        if (result == PasswordVerificationResult.Success)
-        {
-
-            datosUserDto.Mensaje = "Ok";
-            datosUserDto.EstaAutenticado = true;
-            JwtSecurityToken jwtSecurityToken = CreateJwtToken(User);
-            datosUserDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-            datosUserDto.Username = User.Username;
-            datosUserDto.Email = User.Username;
-            //datosUserDto.Token = _jwtGenerador.CrearToken(User);
-            return datosUserDto;
-
-        }
-        datosUserDto.EstaAutenticado = false;
-        datosUserDto.Mensaje = $"Credenciales incorrectas para el User {User.Username}.";
-        return datosUserDto;
-
-    }
     private JwtSecurityToken CreateJwtToken(User User)
     {
-        var Rolses = User.Rolss;
+        var Rolses = User.Roles;
         var RolseClaims = new List<Claim>();
         foreach (var Rolse in Rolses)
         {
-            RolseClaims.Add(new Claim("Rolses", Rolse.Nombre));
+            RolseClaims.Add(new Claim("Roles", Rolse.Nombre));
         }
         var claims = new[]
         {

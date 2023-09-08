@@ -134,8 +134,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
-                "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
+              "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
               },
               "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj": {
                 "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Persistencia\\Persistencia.csproj"
@@ -172,14 +172,14 @@
         }
       }
     },
-    "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\APOLT01\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\APOLT01\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -261,8 +261,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
-                "projectPath": "c:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
+              "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\APOLT01\\Documents\\anderson\\JsonPractica\\Dominio\\Dominio.csproj"
               }
             }
           }

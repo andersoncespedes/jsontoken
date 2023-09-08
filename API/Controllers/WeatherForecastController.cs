@@ -1,24 +1,26 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.ContRolslers;
 
 [ApiController]
-[Route("[contRolsler]")]
-public class WeatherForecastContRolsler : ControllerBase
+[Route("[controller]")]
+public class WeatherForecastController: ControllerBase
 {
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    private readonly ILogger<WeatherForecastContRolsler> _logger;
+    private readonly ILogger<WeatherForecastController> _logger;
 
-    public WeatherForecastContRolsler(ILogger<WeatherForecastContRolsler> logger)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet("GetWeatherForecast")]
+    [Authorize]
     public IEnumerable<WeatherForecast> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast

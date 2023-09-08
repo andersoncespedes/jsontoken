@@ -24,7 +24,7 @@ public class UserContRolsler : BaseApiContRolsler
         var token = await _userService.GetTokenAsync(login);
         return Ok(token);
     }
-    [HttpPost("addRolse")]
+    [HttpPost("addRol")]
     public async Task<IActionResult> AddRolseAsync(AddRoleDto model){
         var result = await _userService.AddRolseAsync(model);
         return Ok(result);
