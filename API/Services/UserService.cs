@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using Dominio.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using API.Dtos;
@@ -95,6 +96,8 @@ public class UserService : IUserService
                 datosUserDto.Roles = User.Roles
                                             .Select(u => u.Nombre)
                                             .ToList();
+                datosUserDto.Expiry = DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes);
+                datosUserDto.RefreshToken = GenerateRefreshToken(User.Username).ToString("D");
                 return datosUserDto;
             }
             
@@ -103,7 +106,85 @@ public class UserService : IUserService
         datosUserDto.Mensaje = $"Credenciales incorrectas para el User {User.Username}.";
         return datosUserDto;
     }
+    public async Task<DatosUserDto> GetTokenAsync(AuthenticationTokenResultDto model)
+    {
+        DatosUserDto datosUserDto = new DatosUserDto();
+        if(!IsValid(model, out string Username)){
+            return null;
+        }
+        var User = await _unitOfWork.User
+                    .GetByUsernameAsync(Username);
 
+        if (User == null)
+        {
+            datosUserDto.EstaAutenticado = false;
+            datosUserDto.Mensaje = $"No existe ningún User con el username {Username}.";
+            return datosUserDto;
+        }
+
+            datosUserDto.EstaAutenticado = true;
+            datosUserDto.Mensaje = "Ok";
+           
+            JwtSecurityToken jwtSecurityToken = CreateJwtToken(User);
+            datosUserDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+            datosUserDto.Email = User.Email;
+            datosUserDto.Username = User.Username;
+            datosUserDto.Roles = User.Roles
+                                            .Select(u => u.Nombre)
+                                            .ToList();
+            datosUserDto.Expiry = DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes);
+            datosUserDto.RefreshToken = GenerateRefreshToken(User.Username).ToString("D");
+            return datosUserDto;
+            
+            
+    }
+    private bool IsValid (AuthenticationTokenResultDto authResult, out string Username){
+        Username = string.Empty;
+        ClaimsPrincipal principal = GetPrincipalFromExpiredToken(authResult.AccesToken);
+        if( principal is null){
+            throw new UnauthorizedAccessException("No Hay Token de Acceso");
+        }
+        Username = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+        if(string.IsNullOrEmpty(Username)){
+            throw new UnauthorizedAccessException("El refresh Token esta mal formado");
+        }
+        if(!Guid.TryParse(authResult.RefreshToken, out Guid givenRefreshToken))
+        {
+            throw new UnauthorizedAccessException("El refresh Token no es valido en el sistema");
+        }
+        if(!_refreshToken.TryGetValue(Username, out Guid currentRefreshToken))
+        {
+            throw new UnauthorizedAccessException("El Refresh Token no es valido en el sistema");
+        }
+        if(currentRefreshToken != givenRefreshToken){
+            throw new UnauthorizedAccessException("El Refresh Token enviado es Invalido");
+        }
+        return true;
+    }
+    private ClaimsPrincipal GetPrincipalFromExpiredToken(string accessToken){
+        TokenValidationParameters tokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = false,
+            ValidIssuer = _jwt.Issuer,
+            ValidAudience = _jwt.Audience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key))
+        };
+        JwtSecurityTokenHandler tokenHandler = new ();
+        ClaimsPrincipal principal = tokenHandler.ValidateToken(accessToken,tokenValidationParameters, out SecurityToken securityToken);
+        if(securityToken is not JwtSecurityToken jwtSecurityToken || !jwtSecurityToken.Header.Alg.Equals
+        (SecurityAlgorithms.HmacSha256Signature, StringComparison.InvariantCulture)){
+            throw new UnauthorizedAccessException("El token es Invalido");
+        }
+        return principal;
+    }
+    private static readonly ConcurrentDictionary<string, Guid> _refreshToken = new ConcurrentDictionary<string, Guid>();  
+    private Guid GenerateRefreshToken (string username){
+        Guid newRefreshToken = _refreshToken.AddOrUpdate(username, u => Guid.NewGuid(), (u,o) => Guid.NewGuid());
+        return newRefreshToken;   
+    }
     public async Task<string> AddRolseAsync(AddRoleDto model)
     {
         var User = await _unitOfWork.User
