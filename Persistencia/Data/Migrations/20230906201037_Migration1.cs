@@ -15,7 +15,7 @@ namespace Persistencia.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "rol",
+                name: "Rols",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -25,7 +25,7 @@ namespace Persistencia.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_rol", x => x.Id);
+                    table.PrimaryKey("PK_Rols", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -49,24 +49,24 @@ namespace Persistencia.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "user_rol",
+                name: "user_Rols",
                 columns: table => new
                 {
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    RolId = table.Column<int>(type: "int", nullable: false),
+                    RolsId = table.Column<int>(type: "int", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user_rol", x => new { x.RolId, x.UserId });
+                    table.PrimaryKey("PK_user_Rols", x => new { x.RolsId, x.UserId });
                     table.ForeignKey(
-                        name: "FK_user_rol_rol_RolId",
-                        column: x => x.RolId,
-                        principalTable: "rol",
+                        name: "FK_user_Rols_Rols_RolsId",
+                        column: x => x.RolsId,
+                        principalTable: "Rols",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_user_rol_user_UserId",
+                        name: "FK_user_Rols_user_UserId",
                         column: x => x.UserId,
                         principalTable: "user",
                         principalColumn: "Id",
@@ -75,8 +75,8 @@ namespace Persistencia.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_user_rol_UserId",
-                table: "user_rol",
+                name: "IX_user_Rols_UserId",
+                table: "user_Rols",
                 column: "UserId");
         }
 
@@ -84,10 +84,10 @@ namespace Persistencia.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "user_rol");
+                name: "user_Rols");
 
             migrationBuilder.DropTable(
-                name: "rol");
+                name: "Rols");
 
             migrationBuilder.DropTable(
                 name: "user");

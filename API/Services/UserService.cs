@@ -86,14 +86,18 @@ public class UserService : IUserService
         if (resultado == PasswordVerificationResult.Success)
         {
             datosUserDto.EstaAutenticado = true;
-            JwtSecurityToken jwtSecurityToken = CreateJwtToken(User);
-            datosUserDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-            datosUserDto.Email = User.Email;
-            datosUserDto.Username = User.Username;
-            datosUserDto.Roles = User.Roles
+            datosUserDto.Mensaje = "Ok";
+            if(User != null){
+                JwtSecurityToken jwtSecurityToken = CreateJwtToken(User);
+                datosUserDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+                datosUserDto.Email = User.Email;
+                datosUserDto.Username = User.Username;
+                datosUserDto.Roles = User.Roles
                                             .Select(u => u.Nombre)
                                             .ToList();
-            return datosUserDto;
+                return datosUserDto;
+            }
+            
         }
         datosUserDto.EstaAutenticado = false;
         datosUserDto.Mensaje = $"Credenciales incorrectas para el User {User.Username}.";
@@ -137,7 +141,7 @@ public class UserService : IUserService
         var RolseClaims = new List<Claim>();
         foreach (var Rolse in Rolses)
         {
-            RolseClaims.Add(new Claim("Roles", Rolse.Nombre));
+            RolseClaims.Add(new Claim("roles", Rolse.Nombre));
         }
         var claims = new[]
         {

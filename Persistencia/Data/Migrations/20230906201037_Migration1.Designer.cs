@@ -21,7 +21,7 @@ namespace Persistencia.Data.Migrations
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Dominio.Entities.Rol", b =>
+            modelBuilder.Entity("Dominio.Entities.Rols", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,7 +35,7 @@ namespace Persistencia.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("rol", (string)null);
+                    b.ToTable("Rols", (string)null);
                 });
 
             modelBuilder.Entity("Dominio.Entities.User", b =>
@@ -67,9 +67,9 @@ namespace Persistencia.Data.Migrations
                     b.ToTable("user", (string)null);
                 });
 
-            modelBuilder.Entity("Dominio.Entities.UserRol", b =>
+            modelBuilder.Entity("Dominio.Entities.UserRols", b =>
                 {
-                    b.Property<int>("RolId")
+                    b.Property<int>("RolsId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -78,40 +78,40 @@ namespace Persistencia.Data.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.HasKey("RolId", "UserId");
+                    b.HasKey("RolsId", "UserId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_rol", (string)null);
+                    b.ToTable("user_Rols", (string)null);
                 });
 
-            modelBuilder.Entity("Dominio.Entities.UserRol", b =>
+            modelBuilder.Entity("Dominio.Entities.UserRols", b =>
                 {
-                    b.HasOne("Dominio.Entities.Rol", "Rol")
-                        .WithMany("UserRols")
-                        .HasForeignKey("RolId")
+                    b.HasOne("Dominio.Entities.Rols", "Rols")
+                        .WithMany("UserRolss")
+                        .HasForeignKey("RolsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Dominio.Entities.User", "User")
-                        .WithMany("UsersRols")
+                        .WithMany("UsersRolss")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Rol");
+                    b.Navigation("Rols");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Dominio.Entities.Rol", b =>
+            modelBuilder.Entity("Dominio.Entities.Rols", b =>
                 {
-                    b.Navigation("UserRols");
+                    b.Navigation("UserRolss");
                 });
 
             modelBuilder.Entity("Dominio.Entities.User", b =>
                 {
-                    b.Navigation("UsersRols");
+                    b.Navigation("UsersRolss");
                 });
 #pragma warning restore 612, 618
         }

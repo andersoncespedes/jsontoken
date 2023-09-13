@@ -11,24 +11,24 @@ namespace Aplicacion.UnitOfWork;
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly APIContext _context;
-    private UsuarioRepository _usuarios;
-    private RolRepository _roles;
+    private UserRepository _Users;
+    private RolRepository _Rolses;
     public UnitOfWork(APIContext context){
         _context = context;
     }
-    public IRol Rol {
+    public IRol Roles {
         get{
-            if(_roles == null){
-               _roles = new(_context); 
+            if(_Rolses == null){
+               _Rolses = new(_context); 
             }
-            return _roles;
+            return _Rolses;
         }
     }
 
-    public IUsuario Usuario {
+    public IUser User {
         get {
-            if(_usuarios ==null) _usuarios = new UsuarioRepository(_context);
-            return _usuarios;
+            if(_Users ==null) _Users = new UserRepository(_context);
+            return _Users;
         }
     }
 

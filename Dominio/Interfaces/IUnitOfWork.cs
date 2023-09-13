@@ -7,7 +7,7 @@ namespace Dominio.Interfaces;
 
 public interface IUnitOfWork
 {
-    IRol Rol {get;}
-    IUsuario Usuario {get;} 
+    IRol Roles {get;}
+    IUser User {get;} 
     Task<int> SaveAsync();
 }

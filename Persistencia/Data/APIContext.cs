@@ -8,8 +8,8 @@ namespace Persistencia.Data;
 public class APIContext : DbContext
 {
     public DbSet<User> Users{ get; set; }
-    public DbSet<UserRol> UserRols{get; set; }
-    public DbSet<Rol> Rols { get; set; }
+    public DbSet<UserRols> UserRoles{get; set; }
+    public DbSet<Rol> Roles { get; set; }
     public APIContext(DbContextOptions<APIContext> options) : base(options){
 
     }

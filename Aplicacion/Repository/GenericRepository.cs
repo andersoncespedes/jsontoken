@@ -37,18 +37,18 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
         return await _context.Set<T>().FindAsync(id);
     }
 
-    public void Remove(T entity)
+    public virtual void Remove(T entity)
     {
         _context.Set<T>().Remove(entity);
     }
 
-    public void RemoveRange(IEnumerable<T> entities)
+    public virtual void RemoveRange(IEnumerable<T> entities)
     {
         _context.Set<T>().RemoveRange(entities);
     }
 
-    public void Update(T entities)
+    public virtual void Update(T entities)
     {
-        _context.Set<T>().RemoveRange(entities);
+        _context.Set<T>().Update(entities);
     }
 }

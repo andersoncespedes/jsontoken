@@ -1,6 +1,5 @@
 using System.Linq.Expressions;
 using Dominio.Entities;
-using System.Linq.Expressions;
 namespace Dominio.Interfaces;
 public interface IGenericRepository<T> where T : BaseEntity
 {

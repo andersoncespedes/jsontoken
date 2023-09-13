@@ -5,5 +5,5 @@ public class Rol : BaseEntity
 {
     public string Nombre { get; set; }
     public ICollection<User> Users { get; set; } = new HashSet<User>();
-    public ICollection<UserRol> UsersRols{ get; set; }
+    public ICollection<UserRols> UsersRoles{ get; set; }
 }

@@ -31,17 +31,17 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         .HasColumnName("password")
         .HasColumnType("varchar")
         .IsRequired()
-        .HasMaxLength(150);
+        .HasMaxLength(250);
 
-        builder.HasMany(e => e.Rols)
+        builder.HasMany(e => e.Roles)
         .WithMany(e => e.Users)
-        .UsingEntity<UserRol>(
+        .UsingEntity<UserRols>(
             j => j.HasOne(e => e.Rol)
-            .WithMany(e => e.UsersRols)
+            .WithMany(e => e.UsersRoles)
             .HasForeignKey(e => e.RolId),
 
             j => j.HasOne(e => e.User)
-            .WithMany(e => e.UsersRols)
+            .WithMany(e => e.UsersRoles)
             .HasForeignKey(e => e.UserId),
 
             j => {

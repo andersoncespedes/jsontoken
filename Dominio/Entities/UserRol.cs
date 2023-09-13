@@ -1,7 +1,7 @@
 
 namespace Dominio.Entities;
 
-public class UserRol : BaseEntity
+public class UserRols : BaseEntity
 {
     public int UserId { get; set; }
     public User User { get; set; }

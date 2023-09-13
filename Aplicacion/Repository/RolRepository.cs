@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 using Dominio.Entities;
 using Dominio.Interfaces;
 using Persistencia.Data;
@@ -15,5 +12,17 @@ public class RolRepository : GenericRepository<Rol>, IRol
     {
         _context = context;
     }
-    
+    public override void Add(Rol entity)
+    {
+        base.Add(entity);
+    }
+    public override IEnumerable<Rol> Find(Expression<Func<Rol, bool>> expression)
+    {
+        return base.Find(expression);
+    }
+    public override void Update(Rol entities)
+    {
+        base.Update(entities);
+    }
+
 }
